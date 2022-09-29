@@ -30,8 +30,8 @@ const List = () => {
                
                     event.preventDefault()
                     api.get(`/getAnswer/${questionId}`).then((response) => { 
-                        setAnswer(response.data);
-                        setAnswerWrongs(  )
+                        setAnswer(response.data.answerData);
+                        setAnswerWrongs(response.data.wrongAnswerData)
                         console.log(response.data.answerData)
                         console.log(response.data.wrongAnswerData)
                     })
