@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import api from "../../services/api"
-import { Container } from "./styles"
+import { Container, GroupAnswer } from "./styles"
 
 const List = () => {
     const [questionId, setQuestionId] = useState(0)
@@ -38,7 +38,16 @@ const List = () => {
                     .catch((err) => {console.error('erro: ' + err)})
                           
             }}>Buscar Questões</button>
-
+        <GroupAnswer>
+        <div className="grupo">
+        <h3>Respostas Verdadeira</h3>
+        {answers?.map((aws) => (<p value={aws.id_pergunta}>{aws.resposta}</p>))}
+        </div>
+        <div className="grupo">
+        <h3>Respostas Falsas</h3>
+        {answerWrongs?.map((aws) => (<p value={aws.id_pergunta}>{aws.resposta_falsa}</p>))}
+        </div>
+        </GroupAnswer>
 
         </Container>
         </div>

@@ -48,9 +48,9 @@ h3{
     font-size: 1.6rem;
     margin-bottom: 3%;
 }
-li{
-    font-size: 1.3rem;
-    font-weight: 550;
-}
+
+display: flex;
+justify-content: space-between;
+width: 40rem;
 
 `
